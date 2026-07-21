@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule Builder | Riverwood Ecclesia Portal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .assign-row { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+  .assign-row select { flex: 1; min-width: 160px; }
+  .assign-row input[type=text] { flex: 1; min-width: 140px; }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%; background: var(--ink);
+    color: var(--white); font-size: 0.75rem; font-weight: 700; margin-right: 0.5rem;
+  }
+  .title-edit {
+    font-family: 'Merriweather', Georgia, serif; font-size: 1.05rem; font-weight: 700;
+    border: none; border-bottom: 1px dashed var(--border); width: 100%; padding: 0.15rem 0;
+    background: transparent; color: var(--ink);
+  }
+  .title-edit:focus { outline: none; border-bottom-color: var(--teal); }
+  .draft-tag {
+    background: var(--teal-dark); color: var(--white); font-size: 0.62rem;
+    text-transform: uppercase; letter-spacing: 0.05em; padding: 0.1rem 0.5rem;
+    border-radius: 999px; margin-left: 0.5rem;
+  }
+</style>
+</head>
+<body>
+  <div id="nav-root"></div>
+  <div class="container">
+    <div class="section-title">
+      <h2>Schedule Builder</h2>
+    </div>
+    <p class="empty-note">Build the next roster period privately, check everything over, then publish it in one go - nobody sees any of this until you hit Publish.</p>
+
+    <div class="card">
+      <h3><span class="step-num">1</span>Generate the meetings</h3>
+      <p class="empty-note">Creates every Sunday Memorial Meeting, Sunday Evening Lecture, and Wednesday Bible Class in this date range as a private draft, with empty duty slots. Safe to run again over the same range - it won't duplicate anything already there. You'll still need to fix up one-off exceptions afterward (Combined Weekends, 5th Sundays, special guest nights etc.).</p>
+      <form class="stacked" id="generateForm">
+        <div style="display:flex; gap:0.75rem;">
+          <div style="flex:1;">
+            <label for="genFrom">From date</label>
+            <input type="date" id="genFrom" required>
+          </div>
+          <div style="flex:1;">
+            <label for="genTo">To date</label>
+            <input type="date" id="genTo" required>
+          </div>
+        </div>
+        <button class="btn" type="submit">Generate</button>
+      </form>
+      <div id="generateResult" style="margin-top:0.75rem;"></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="step-num">2</span>Auto-fill duties</h3>
+      <p class="empty-note">Fills the empty slots in the draft using everyone's saved availability and duty preferences - never couple duties (Hosting/Hall Duties/Supper), never overwrites something already filled, never double-books someone on the same event. Run it as many times as you like while you're still editing.</p>
+      <form class="stacked" id="autoAssignForm">
+        <div style="display:flex; gap:0.75rem;">
+          <div style="flex:1;">
+            <label for="autoFrom">From date</label>
+            <input type="date" id="autoFrom">
+          </div>
+          <div style="flex:1;">
+            <label for="autoTo">To date</label>
+            <input type="date" id="autoTo">
+          </div>
+        </div>
+        <button class="btn" type="submit">Run auto-fill</button>
+      </form>
+      <div id="autoAssignResults" style="margin-top:1rem;"></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="step-num">3</span>Review &amp; edit the draft</h3>
+      <p class="empty-note">Click a title to rename it (e.g. add the week's actual Bible Class topic once you know it). Adjust any assignment the same way as the normal Roster page. Remove any event that shouldn't be there.</p>
+      <button class="btn secondary small" type="button" onclick="loadDraftEvents()">Refresh</button>
+      <div id="draftList" style="margin-top:1rem;"><p class="empty-note">No draft generated yet - use step 1 above.</p></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="step-num">4</span>Publish or discard</h3>
+      <p class="empty-note">Publishing makes every draft event above visible to everyone and merges it into the normal Roster page. Discarding permanently deletes the whole draft so you can start over.</p>
+      <button class="btn" type="button" onclick="publishDraft()">Publish this schedule to everyone</button>
+      <button class="btn danger" type="button" onclick="discardDraft()">Discard draft</button>
+      <div id="publishResult" style="margin-top:0.75rem;"></div>
+    </div>
+  </div>
+  <footer class="site-footer">Riverwood Christadelphian Ecclesia &middot; 265 Bonds Road, Riverwood</footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    let currentUser = null;
+    let allMembers = [];
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    async function loadMembers() {
+      const res = await fetch('/api/users', { credentials: 'include' });
+      const data = await res.json();
+      allMembers = data.users;
+    }
+
+    function renderAssignCell(ev, a) {
+      const selectId = `sel_${ev.id}_${a.id}`;
+      const textId = `txt_${ev.id}_${a.id}`;
+      return `
+        <div class="assign-row">
+          <select id="${selectId}" onchange="onAssignSelect(${ev.id}, '${a.role.replace(/'/g, "\\'")}', this.value, '${textId}')">
+            <option value="" ${!a.user_id ? 'selected' : ''}>&mdash; Unfilled / custom text &mdash;</option>
+            ${allMembers.map(m => `<option value="${m.id}" ${a.user_id === m.id ? 'selected' : ''}>${escapeHtml(m.name)}</option>`).join('')}
+          </select>
+          <input type="text" id="${textId}" placeholder="or type a name / couple e.g. J+R Stone"
+                 value="${escapeHtml(a.assigned_name || '')}" style="${a.user_id ? 'display:none;' : ''}"
+                 onblur="onAssignText(${ev.id}, '${a.role.replace(/'/g, "\\'")}', this.value, '${selectId}')">
+        </div>
+      `;
+    }
+
+    async function onAssignSelect(eventId, role, userId, textId) {
+      const textInput = document.getElementById(textId);
+      if (userId) {
+        textInput.style.display = 'none';
+        textInput.value = '';
+        await assign(eventId, role, { user_id: Number(userId) });
+      } else {
+        textInput.style.display = '';
+        textInput.focus();
+      }
+    }
+
+    async function onAssignText(eventId, role, text, selectId) {
+      document.getElementById(selectId).value = '';
+      await assign(eventId, role, { assigned_name: text });
+    }
+
+    async function assign(eventId, role, payload) {
+      await fetch(`/api/events/${eventId}/assignments`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ role, ...payload })
+      });
+    }
+
+    async function onTitleEdit(eventId, newTitle) {
+      if (!newTitle.trim()) return;
+      await fetch(`/api/events/${eventId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ title: newTitle })
+      });
+    }
+
+    async function deleteDraftEvent(id) {
+      if (!confirm('Remove this event from the draft?')) return;
+      await fetch('/api/events/' + id, { method: 'DELETE', credentials: 'include' });
+      loadDraftEvents();
+    }
+
+    function renderDraftEvent(ev) {
+      return `
+        <div class="card event-block">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
+            <div style="flex:1;">
+              <input type="text" class="title-edit" value="${escapeHtml(ev.title)}" onblur="onTitleEdit(${ev.id}, this.value)">
+              <div class="event-sub">${fmtDate(ev.event_date)}${ev.event_time ? ' &middot; ' + fmtTime(ev.event_time) : ''}<span class="draft-tag">Draft</span></div>
+            </div>
+            <a class="btn small danger" onclick="deleteDraftEvent(${ev.id})">Remove</a>
+          </div>
+          ${ev.assignments.length ? `
+          <table class="roster-table">
+            <thead><tr><th style="width:220px">Role</th><th>Assigned to</th></tr></thead>
+            <tbody>
+              ${ev.assignments.map(a => `
+                <tr>
+                  <td class="role-name">${escapeHtml(a.role)}</td>
+                  <td>${renderAssignCell(ev, a)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>` : ''}
+        </div>
+      `;
+    }
+
+    async function loadDraftEvents() {
+      const box = document.getElementById('draftList');
+      const res = await fetch('/api/events?status=draft&upcoming=false', { credentials: 'include' });
+      const data = await res.json();
+      if (!data.events.length) {
+        box.innerHTML = '<p class="empty-note">No draft events right now - generate a range above, or everything\'s already been published.</p>';
+        return;
+      }
+      box.innerHTML = data.events.map(renderDraftEvent).join('');
+    }
+
+    document.getElementById('generateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const start_date = document.getElementById('genFrom').value;
+      const end_date = document.getElementById('genTo').value;
+      const resultBox = document.getElementById('generateResult');
+      resultBox.innerHTML = '<p class="empty-note">Generating&hellip;</p>';
+      const res = await fetch('/api/admin/generate-schedule', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ start_date, end_date })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        resultBox.innerHTML = `<p class="error-msg" style="display:block;">${escapeHtml(data.error || 'Could not generate schedule')}</p>`;
+        return;
+      }
+      resultBox.innerHTML = `<p>${data.created} event${data.created === 1 ? '' : 's'} created${data.skipped ? `, ${data.skipped} already existed and were skipped` : ''}.</p>`;
+      document.getElementById('autoFrom').value = start_date;
+      document.getElementById('autoTo').value = end_date;
+      loadDraftEvents();
+    });
+
+    document.getElementById('autoAssignForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const from_date = document.getElementById('autoFrom').value || undefined;
+      const to_date = document.getElementById('autoTo').value || undefined;
+      const resultsBox = document.getElementById('autoAssignResults');
+      resultsBox.innerHTML = '<p class="empty-note">Running&hellip;</p>';
+      const res = await fetch('/api/admin/auto-assign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ from_date, to_date })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        resultsBox.innerHTML = `<p class="error-msg" style="display:block;">${escapeHtml(data.error || 'Auto-fill failed')}</p>`;
+        return;
+      }
+      const filledHtml = data.filled.length
+        ? `<p><strong>${data.filled.length} slot${data.filled.length === 1 ? '' : 's'} filled:</strong></p>` +
+          data.filled.map(f => `<div class="schedule-item"><div><div class="date">${fmtDate(f.date)}</div><div class="sub">${escapeHtml(f.event)}</div></div><div class="role-badge">${escapeHtml(f.role)} &rarr; ${escapeHtml(f.member)}</div></div>`).join('')
+        : '<p class="empty-note">No empty slots could be filled.</p>';
+      const skippedHtml = data.skipped.length
+        ? `<p style="margin-top:1.5rem;"><strong>${data.skipped.length} slot${data.skipped.length === 1 ? '' : 's'} still need a volunteer:</strong></p>` +
+          data.skipped.map(s => `<div class="schedule-item"><div><div class="date">${fmtDate(s.date)}</div><div class="sub">${escapeHtml(s.event)} &middot; ${escapeHtml(s.reason)}</div></div><div class="role-badge">${escapeHtml(s.role)}</div></div>`).join('')
+        : '';
+      resultsBox.innerHTML = filledHtml + skippedHtml;
+      loadDraftEvents();
+    });
+
+    async function publishDraft() {
+      if (!confirm('Publish the whole draft schedule? Everyone will be able to see it right away.')) return;
+      const res = await fetch('/api/admin/publish-schedule', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({})
+      });
+      const data = await res.json();
+      document.getElementById('publishResult').innerHTML = `<p>${data.published} event${data.published === 1 ? '' : 's'} published - check the <a href="/roster.html">Roster page</a> to see it live.</p>`;
+      loadDraftEvents();
+    }
+
+    async function discardDraft() {
+      if (!confirm('This permanently deletes every draft event. Are you sure?')) return;
+      const res = await fetch('/api/admin/discard-draft', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({})
+      });
+      const data = await res.json();
+      document.getElementById('publishResult').innerHTML = `<p>${data.deleted} draft event${data.deleted === 1 ? '' : 's'} discarded.</p>`;
+      loadDraftEvents();
+    }
+
+    (async () => {
+      currentUser = await requireLogin();
+      if (!currentUser) return;
+      if (currentUser.role !== 'admin') { window.location.href = '/dashboard.html'; return; }
+      renderNav('schedule-builder', currentUser);
+      await loadMembers();
+      await loadDraftEvents();
+    })();
+  </script>
+</body>
+</html>
