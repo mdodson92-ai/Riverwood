@@ -1,0 +1,21 @@
+# Render.com Blueprint - lets you deploy this app with "New > Blueprint"
+# instead of configuring a Web Service by hand. See README.md for the
+# step-by-step walkthrough.
+#
+# NOTE: this is set up for Render's FREE tier, which does not support
+# persistent disks. That means the SQLite database resets to the seeded
+# July-Dec 2026 data every time the service restarts (Render free services
+# spin down after ~15 minutes idle and reseed on the next request). Fine for
+# testing/demoing the site; once you're ready to make this the real site
+# everyone uses day-to-day, upgrade to a paid plan and add a `disk:` block
+# back in (see README.md) so admin changes actually stick.
+services:
+  - type: web
+    name: riverwood-portal
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
