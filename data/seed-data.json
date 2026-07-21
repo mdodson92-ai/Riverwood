@@ -1,0 +1,3248 @@
+{
+ "individuals": [
+  {
+   "name": "Sonia Bagtas",
+   "email": "sonia.bagtas@riverwoodce.local",
+   "phone": "9153 5579",
+   "address": "5/6-8 Cairns Street, Riverwood 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Harri Bailye",
+   "email": "Harribailye@outlook.com",
+   "phone": "0421 900 489",
+   "address": "Flat 6, School Parade, Padstow 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Mia Bailye",
+   "email": "miamannell@icloud.com",
+   "phone": "0423 766 576",
+   "address": "Flat 6, School Parade, Padstow 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Warrick Ball",
+   "email": "warrickball@yahoo.com.au",
+   "phone": "0417 233 719",
+   "address": "68 Allwood Crescent, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "David Bridgens",
+   "email": "dbridgens@hotmail.com",
+   "phone": "0431 323 825",
+   "address": "1/4 Cato Way, Casula 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Amy Bridgens",
+   "email": "arbridgens@hotmail.com",
+   "phone": "0449 624 217",
+   "address": "1/4 Cato Way, Casula 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Tim Buttsworth",
+   "email": "timothybuttsworth@gmail.com",
+   "phone": "0458 758 454",
+   "address": "1/23 Salamaua Crescent, Holsworthy 2173",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jordyn Buttsworth",
+   "email": "jordynarthur@gmail.com",
+   "phone": "0487 639 934",
+   "address": "1/23 Salamaua Crescent, Holsworthy 2173",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Michael Champion",
+   "email": "michael.champion@riverwoodce.local",
+   "phone": "0412 021 372",
+   "address": "Grange, 15 Gloucester Ave, Nth Parramatta 2151",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nathan Coad",
+   "email": "nathan@thecoads.com",
+   "phone": "0407 400 976",
+   "address": "17 Northmeadows, Cordeaux Heights 2526",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nic Collins",
+   "email": "nicolasjamescollins@gmail.com",
+   "phone": "0403 309 150",
+   "address": "",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Rohan Dangerfield",
+   "email": "rohan@rdangerfield.com",
+   "phone": "0413 874 028",
+   "address": "21 Anne Street, Revesby 2212",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Rebekah Dangerfield",
+   "email": "home@rdangerfield.com",
+   "phone": "0402 219 645",
+   "address": "21 Anne Street, Revesby 2212",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Ella Dangerfield",
+   "email": "ella@rdangerfield.com",
+   "phone": "0481 973 741",
+   "address": "21 Anne Street, Revesby 2212",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Amelia Dangerfield",
+   "email": "amelia.r.dangerfield@icloud.com",
+   "phone": "0402 341 840",
+   "address": "21 Anne Street, Revesby 2212",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "George Darke",
+   "email": "g.darke@bigpond.com",
+   "phone": "0417 233 881",
+   "address": "35/15 Gloucester Ave, Nth Parramatta 2151",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Greg Della",
+   "email": "greg.della@icloud.com",
+   "phone": "0401 105 485",
+   "address": "48 Llewellyn Street, Oatley 2223",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Karen Della",
+   "email": "kdella66@gmail.com",
+   "phone": "0450 443 821",
+   "address": "48 Llewellyn Street, Oatley 2223",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Mark Dennes",
+   "email": "dentoflyer@gmail.com",
+   "phone": "0412 922 116",
+   "address": "C73, 1 McDonald Street, Cronulla 2230",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Loriene Dennes",
+   "email": "lossdennes2104@gmail.com",
+   "phone": "0412 927 793",
+   "address": "C73, 1 McDonald Street, Cronulla 2230",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "James Dodson",
+   "email": "jameswdodson@gmail.com",
+   "phone": "0431 056 720",
+   "address": "5 Sylvan Grove, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Emma Dodson",
+   "email": "emma.l.dodson@gmail.com",
+   "phone": "0404 589 981",
+   "address": "5 Sylvan Grove, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Micah Dodson",
+   "email": "mdodson92@gmail.com",
+   "phone": "0402 266 877",
+   "address": "14 Banksia Place, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "admin"
+  },
+  {
+   "name": "Karis Dodson",
+   "email": "mdodson92+karis@gmail.com",
+   "phone": "0401 926 806",
+   "address": "14 Banksia Place, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Steve Dodson",
+   "email": "dodstee@gmail.com",
+   "phone": "0413 121 441",
+   "address": "7 Queensbury Road, Padstow Heights 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Sandy Dodson",
+   "email": "sandraleedodson@gmail.com",
+   "phone": "0402 121 441",
+   "address": "7 Queensbury Road, Padstow Heights 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jared Dodson",
+   "email": "talk2me_dodo@hotmail.com",
+   "phone": "0431 203 338",
+   "address": "7 Queensbury Road, Padstow Heights 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Abi Dodson",
+   "email": "abi.wetherton@gmail.com",
+   "phone": "0450 328 035",
+   "address": "7 Queensbury Road, Padstow Heights 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jarrod Edgecombe",
+   "email": "jarrodandabi@gmail.com",
+   "phone": "0407 601 304",
+   "address": "1 Paul Street, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Abi Edgecombe",
+   "email": "jarrodandabi+abi@gmail.com",
+   "phone": "0425 219 134",
+   "address": "1 Paul Street, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Ben Franklin",
+   "email": "benfranklin074@gmail.com",
+   "phone": "0452 610 571",
+   "address": "34 Wayne Avenue, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Rose Franklin",
+   "email": "rose_ben@bigpond.com",
+   "phone": "0409 464 979",
+   "address": "34 Wayne Avenue, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Oliver Franklin",
+   "email": "ofranklin4321@gmail.com",
+   "phone": "0466 531 095",
+   "address": "34 Wayne Avenue, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Susanna Franks",
+   "email": "susannajfranks@gmail.com",
+   "phone": "0424 335 110",
+   "address": "",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Billy Gascoyne",
+   "email": "gascoynebilly@gmail.com",
+   "phone": "0423 394 887",
+   "address": "",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "David Gibbs",
+   "email": "dave.gibbs1985@gmail.com",
+   "phone": "0401 833 613",
+   "address": "28 Kilmarnock Road, Engadine 2233",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Hope Gibbs",
+   "email": "hope.steel@hotmail.com",
+   "phone": "0410 492 059",
+   "address": "28 Kilmarnock Road, Engadine 2233",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Dave Gilham",
+   "email": "dpgilham@iinet.net.au",
+   "phone": "0400 418 794",
+   "address": "34 Dilkara Circuit, Bangor 2234",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Peta Gilham",
+   "email": "mzgilham03@outlook.com",
+   "phone": "0410 429 438",
+   "address": "34 Dilkara Circuit, Bangor 2234",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Micah Gilham",
+   "email": "dpgilham+micah@iinet.net.au",
+   "phone": "0433 191 574",
+   "address": "34 Dilkara Circuit, Bangor 2234",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Cooper Gilham",
+   "email": "coopsgilham13@gmail.com",
+   "phone": "0433 558 047",
+   "address": "34 Dilkara Circuit, Bangor 2234",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Greg Gilmore",
+   "email": "greggilmore07@yahoo.com.au",
+   "phone": "0412 509 806",
+   "address": "1150 Forest Road, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Cheryl Gilmore",
+   "email": "cheryl_gilmore2002@yahoo.com.au",
+   "phone": "0412 509 806",
+   "address": "1150 Forest Road, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nathan Gilmore",
+   "email": "nathan@kpd.com.au",
+   "phone": "0403 843 762",
+   "address": "20 Paul Street, Panania 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nic Gilmore",
+   "email": "nicolejg@live.com",
+   "phone": "Nath - 0403 272 322",
+   "address": "20 Paul Street, Panania 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Leo Guo",
+   "email": "teamanleo@QQ.com",
+   "phone": "0411 466 628",
+   "address": "4 Balfour Road, Narwee 2209",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Simeon Hatchell",
+   "email": "sim.shell@optusnet.com.au",
+   "phone": "0421 680 032",
+   "address": "31 Preston Road, Parramatta 2146",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Michelle Hatchell",
+   "email": "sim.shell+michelle@optusnet.com.au",
+   "phone": "0409 665 330",
+   "address": "31 Preston Road, Parramatta 2146",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Haylee Hatchell",
+   "email": "sim.shell+haylee@optusnet.com.au",
+   "phone": "0490 464 533",
+   "address": "31 Preston Road, Parramatta 2146",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jeremy Harden",
+   "email": "jeremydharden@gmail.com",
+   "phone": "0404 067 336",
+   "address": "17 Banksia Place, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Michael Hill",
+   "email": "michaelhill1601@gmail.com",
+   "phone": "0419 721 621",
+   "address": "G11/1A Clement Pl, Rushcutters Bay 2011",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Leah Hill",
+   "email": "leahhillcoaching@gmail.com",
+   "phone": "0429 185 775",
+   "address": "G11/1A Clement Pl, Rushcutters Bay 2011",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nathanael Hunter",
+   "email": "hunter.nk@bigpond.com",
+   "phone": "0417 988 091",
+   "address": "12 Twilight Street, Leppington 2179",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Kyley Hunter",
+   "email": "hunter.nk+kyley@bigpond.com",
+   "phone": "0408 071 909",
+   "address": "12 Twilight Street, Leppington 2179",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Moyra Jacombs",
+   "email": "moyra.jacombs@riverwoodce.local",
+   "phone": "0423 389 012",
+   "address": "7/148 Station Street, Wentworthville 2145",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Tim Jenkins",
+   "email": "tim.jenkins@adp.com",
+   "phone": "0438 019 230",
+   "address": "12a Jellicoe Street, Caringbah South 2229",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nola Jenkins",
+   "email": "nola84@hotmail.com",
+   "phone": "0428 423 266",
+   "address": "12a Jellicoe Street, Caringbah South 2229",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Scott Jose",
+   "email": "sjose83@hotmail.com",
+   "phone": "0433 999 351",
+   "address": "52 Shakespeare Drive, St Clair 2759",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Lachlan Joseph",
+   "email": "josephlachy@gmail.com",
+   "phone": "0409 676 206",
+   "address": "Unit 10, 17-19 Littleton St, Riverwood 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Daphne Lapham",
+   "email": "laphamdaphne777@gmail.com",
+   "phone": "0421 500 326",
+   "address": "Courtlands, Room 43, 19 Lake St, Nth Parramatta",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Colin Lean",
+   "email": "colin.joy@optusnet.com.au",
+   "phone": "0425 218 995",
+   "address": "57 Loftus Avenue, Loftus 2232",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Joy Lean",
+   "email": "joyrose49@yahoo.com",
+   "phone": "0425 218 998",
+   "address": "57 Loftus Avenue, Loftus 2232",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jeff Mannell",
+   "email": "jeffmannell1@bigpond.com",
+   "phone": "0413 499 833",
+   "address": "81 Ogilvy Street, Peakhurst 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Rebekah Mannell",
+   "email": "rebekahmannell@bigpond.com",
+   "phone": "0423 495 611",
+   "address": "81 Ogilvy Street, Peakhurst 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jaida Mannell",
+   "email": "jeffmannell1+jaida@bigpond.com",
+   "phone": "0432 224 264",
+   "address": "81 Ogilvy Street, Peakhurst 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Xander Mannell",
+   "email": "jeffmannell1+xander@bigpond.com",
+   "phone": "0413 784 178",
+   "address": "81 Ogilvy Street, Peakhurst 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Norma Mansfield",
+   "email": "normamansfield41@gmail.com",
+   "phone": "9630 3058",
+   "address": "123/15 Gloucester Ave, North Parramatta 2151",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "James McCann",
+   "email": "jrmccann@optusnet.com.au",
+   "phone": "0410 570 301",
+   "address": "14 Bombo Close, Prestons 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Rochelle McCann",
+   "email": "amccann557@gmail.com",
+   "phone": "0431 156 566",
+   "address": "14 Bombo Close, Prestons 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Amy McCann",
+   "email": "jrmccann+amy@optusnet.com.au",
+   "phone": "0435 060 135",
+   "address": "14 Bombo Close, Prestons 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Ron McCann",
+   "email": "raguel@tpg.com.au",
+   "phone": "9825 6393",
+   "address": "3 Ancura Court, Wattle Grove 2173",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Brenda McCann",
+   "email": "raguel+brenda@tpg.com.au",
+   "phone": "0404 472 597",
+   "address": "3 Ancura Court, Wattle Grove 2173",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Adam McGuigan",
+   "email": "admcguigan@gmail.com",
+   "phone": "0467 568 754",
+   "address": "42 Thomas Street, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nic McGuigan",
+   "email": "nicmmcguigan@gmail.com",
+   "phone": "0413 595 075",
+   "address": "42 Thomas Street, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Adrian McGuigan",
+   "email": "adrian.mcguigan1988@gmail.com",
+   "phone": "0422 266 114",
+   "address": "16 Karen Avenue, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Estelle McGuigan",
+   "email": "estellemans@gmail.com",
+   "phone": "0426 266 766",
+   "address": "16 Karen Avenue, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Bev McGuigan",
+   "email": "bevmcguigan@gmail.com",
+   "phone": "9771 6425",
+   "address": "27 Ramsay Road, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Gavin McGuigan",
+   "email": "gmcguigan@gmail.com",
+   "phone": "0422 782 359",
+   "address": "34 Hedley Street, Riverwood 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Glenda McKenzie",
+   "email": "glendamckenzie103@gmail.com",
+   "phone": "9419 4001",
+   "address": "103 Beaconsfield Road, Chatswood 2067",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Kim Milliken",
+   "email": "milliken.kim@gmail.com",
+   "phone": "0416 287 433",
+   "address": "10 Sillwood Place, West Hoxton 2171",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Ben Palmer",
+   "email": "1ben.palmer@gmail.com",
+   "phone": "0424 730 078",
+   "address": "34 Whitehaven Ave, Quakers Hill 2763",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Lina Palmer",
+   "email": "1ben.palmer+lina@gmail.com",
+   "phone": "0451 644 405",
+   "address": "34 Whitehaven Ave, Quakers Hill 2763",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Mark Peden",
+   "email": "pedenfamily.au@gmail.com",
+   "phone": "0416 014 967",
+   "address": "44 Banyule Court, Wattle Grove 2173",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Cathy Peden",
+   "email": "cpeden@hcs.nsw.edu.au",
+   "phone": "0405 158 004",
+   "address": "44 Banyule Court, Wattle Grove 2173",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Lachlan Peden",
+   "email": "lach.peden@gmail.com",
+   "phone": "0451 961 054",
+   "address": "44 Banyule Court, Wattle Grove 2173",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nathan Phillips",
+   "email": "nathanp2292@gmail.com",
+   "phone": "0416 989 488",
+   "address": "3A Eileen Street, Picnic Point 2213",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nem Raiwalui",
+   "email": "nemsfeoko@gmail.com",
+   "phone": "0493 573 140",
+   "address": "27 Delfin Drive, Wattle Grove",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Chloe Raiwalui",
+   "email": "chloeraiwalui@gmail.com",
+   "phone": "0422 342 889",
+   "address": "27 Delfin Drive, Wattle Grove",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jim Rosser",
+   "email": "jim.rosser@riverwoodce.local",
+   "phone": "9504 5554",
+   "address": "Ibis Aged Care, Room 54, 24 Cheddar Street, Blakehurst 2221",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Priscila Rosser",
+   "email": "wrosserdesu@yahoo.com.au",
+   "phone": "0430 016 226",
+   "address": "6 Balfour Road, Narwee 2209",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Bruce Shaw",
+   "email": "bruce_wiki@bigpond.com",
+   "phone": "0409 466 609",
+   "address": "113-118 Goodrich Road, Cecil Park 2178",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Garrick Shaw",
+   "email": "garrick.shaw@service.nsw.gov.au",
+   "phone": "0408 429 887",
+   "address": "56 Hoy Street, Moorebank 2170",
+   "password": "Riverwood2026!",
+   "role": "admin"
+  },
+  {
+   "name": "Sandy Shaw",
+   "email": "g.s.shaw@bigpond.net.au",
+   "phone": "0409 031 082",
+   "address": "56 Hoy Street, Moorebank 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Tyler Shaw",
+   "email": "tylershaw0123@gmail.com",
+   "phone": "0405 324 242",
+   "address": "56 Hoy Street, Moorebank 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Chick Sherring",
+   "email": "chick.sherring@riverwoodce.local",
+   "phone": "9774 2657",
+   "address": "8 Wainwright Avenue, Padstow Heights 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Keith Sherring",
+   "email": "keith.sherring@riverwoodce.local",
+   "phone": "9774 2657",
+   "address": "8 Wainwright Avenue, Padstow Heights 2211",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Wayne Spall",
+   "email": "wayne@wasit.com.au",
+   "phone": "0400 001 037",
+   "address": "23 Deakin Place, West Pennant Hills 2125",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jenniene Spall",
+   "email": "jenniene@wasit.com.au",
+   "phone": "0412 444 137",
+   "address": "23 Deakin Place, West Pennant Hills 2125",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Gary Steel",
+   "email": "gary_steel@bigpond.com",
+   "phone": "0407 485 284",
+   "address": "20 Read Street, Blakehurst 2221",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Sandy Steel",
+   "email": "gssteel@bigpond.net.au",
+   "phone": "0400 199 861",
+   "address": "20 Read Street, Blakehurst 2221",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Vicki Steel",
+   "email": "ron_vic1@iinet.net.au",
+   "phone": "0409 909 012",
+   "address": "15 Morrison Avenue, Engadine 2233",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Ric Steel",
+   "email": "richardjsteel@gmail.com",
+   "phone": "0417 421 889",
+   "address": "23 Grand Avenue, Westmead 2145",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Rona Steel",
+   "email": "ronasteel@yahoo.com",
+   "phone": "Rona - 0400 327 457",
+   "address": "23 Grand Avenue, Westmead 2145",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Austin Steel",
+   "email": "austin.steel1@gmail.com",
+   "phone": "0479 073 416",
+   "address": "23 Grand Avenue, Westmead 2145",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Anthony Stone",
+   "email": "toneystone@gmail.com",
+   "phone": "0400 308 092",
+   "address": "1065 Forest Road, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Belinda Stone",
+   "email": "toneystone+belinda@gmail.com",
+   "phone": "0431 330 670",
+   "address": "1065 Forest Road, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jeremy Stone",
+   "email": "jeremyandrose@gmail.com",
+   "phone": "0416 161 291",
+   "address": "297c Connells Point Rd, Connells Point 2221",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Rose Stone",
+   "email": "jeremyandrose+rose@gmail.com",
+   "phone": "0414 283 291",
+   "address": "297c Connells Point Rd, Connells Point 2221",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Harry Stone",
+   "email": "harrisonsstone@icloud.com",
+   "phone": "0477 330 145",
+   "address": "297c Connells Point Rd, Connells Point 2221",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Lily Stone",
+   "email": "jeremyandrose+lily@gmail.com",
+   "phone": null,
+   "address": "297c Connells Point Rd, Connells Point 2221",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Eden Tierney",
+   "email": "tierney_eden@hotmail.com",
+   "phone": "0410 938 821",
+   "address": "49 Capparis Lane, Leppington 2179",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Leah Tierney",
+   "email": "leah.c.tierney@gmail.com",
+   "phone": "0403 900 411",
+   "address": "49 Capparis Lane, Leppington 2179",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Justin Tierney",
+   "email": "justin.tierney@prioritycare.com.au",
+   "phone": "0404 755 594",
+   "address": "13 View Street, Peakhurst Heights 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Cristine Tierney",
+   "email": "cristine@wasit.com.au",
+   "phone": "0431 886 157",
+   "address": "13 View Street, Peakhurst Heights 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Bethany Tretola",
+   "email": "bethdennes@hotmail.com",
+   "phone": "0450 420 063",
+   "address": "10 Riverside Drive, Lugarno 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "John Unwin",
+   "email": "johnunwinz@hotmail.com",
+   "phone": "0429 102 116",
+   "address": "6 Wainwright Drive, Cobbitty 2570",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Deb Unwin",
+   "email": "deborah.unwin86@gmail.com",
+   "phone": "0427 131 719",
+   "address": "6 Wainwright Drive, Cobbitty 2570",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Jonny Walters",
+   "email": "jonathan.walters300@gmail.com",
+   "phone": "0433 930 391",
+   "address": "5 Boab Place, Casula 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Phoebe Walters",
+   "email": "luke.phoebe96@gmail.com",
+   "phone": "0429 116 221",
+   "address": "5 Boab Place, Casula 2170",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Brendan Ward",
+   "email": "b.m.ward@outlook.com",
+   "phone": "0430 014 911",
+   "address": "Unit 10, 17-19 Littleton St, Riverwood 2210",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Don Warner",
+   "email": "donaldkwarner@gmail.com",
+   "phone": "0403 064 491",
+   "address": "2 Torch Street, Voyager Point 2172",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Nancy Warner",
+   "email": "donaldkwarner+nancy@gmail.com",
+   "phone": "0403 064 489",
+   "address": "2 Torch Street, Voyager Point 2172",
+   "password": "Riverwood2026!",
+   "role": "member"
+  },
+  {
+   "name": "Dickson Wiafe",
+   "email": "dickson.wiafe@riverwoodce.local",
+   "phone": "0481 177 404",
+   "address": "66a Keppel Cct, Hinchinbrook 2168",
+   "password": "Riverwood2026!",
+   "role": "member"
+  }
+ ],
+ "events": [
+  {
+   "event_date": "2026-07-05",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 49
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 65
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 86
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 105
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 104
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+R Stone"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "M+K Dodson"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-07-12",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 50
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 119
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 69
+    },
+    {
+     "role": "Doorman",
+     "kind": "text",
+     "value": "Jeremy Garden"
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+S Harden"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "T+N Jenkins"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-07-19",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 110
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 106
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 60
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 35
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 19
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "G+S Shaw"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "N+N Gilmore"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-07-26",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 20
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 28
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 115
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 49
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 105
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 72
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "A+B Stone"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "G+S Shaw"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-02",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 104
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 18
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 119
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 103
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 6
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 30
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+R McCann"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "A+E McGuigan"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-09",
+   "event_time": "11:00",
+   "title": "Sydney Ecclesial Combined Weekend",
+   "notes": "Sydney Ecclesial Combined Weekend \u2014 @ Heritage College Sydney",
+   "assignments": []
+  },
+  {
+   "event_date": "2026-08-16",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 30
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 106
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 22
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 41
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 19
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 106
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "G+G Gilmore"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "J+S Harden"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-23",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 96
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 101
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 57
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 97
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 35
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "N+N Gilmore"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "A+B Stone"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-30",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 60
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 52
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 16
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 96
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 72
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 20
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "A+N McGuigan"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "J+R McCann"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-06",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 39
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 50
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 2
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 69
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 104
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "T+N Jenkins"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "R+R Dangerfield"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-13",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "text",
+     "value": "Scott Madden"
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 20
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 82
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 63
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 119
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+R Mannell"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "M+L Dennes"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-20",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 67
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 46
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 80
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 96
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 6
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "M+K Dodson"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "J+R Stone"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-27",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 74
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 49
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 77
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "T+N Jenkins"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "J+A Edgecombe"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-04",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 3
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 69
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 46
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+A Edgecombe"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "N+K Hunter"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-11",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 28
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 41
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 106
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 74
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "N+N Gilmore"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "E+L Tierney"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-18",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 6
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 30
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 60
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 46
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 19
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 28
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "M+L Dennes"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "D+H Gibbs"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-25",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "empty",
+     "value": null
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 67
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 4
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 30
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 97
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 49
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "A+E McGuigan"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "N+K Hunter"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-01",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 18
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 50
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 46
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 2
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 69
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 67
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "A+N McGuigan"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "J+S Harden"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-08",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 96
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 74
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 1
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 32
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 105
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 22
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "G+S Shaw"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "B+R Franklin"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-15",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 80
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 104
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 72
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 52
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "G+C Gilmore"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "G+K Della"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-22",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "text",
+     "value": "Nathan Mansfield"
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 62
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 28
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 2
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 63
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 39
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+R Stone"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "M+K Dodson"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-29",
+   "event_time": "11:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 60
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 11
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 74
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+S Harden"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "G+C Gilmore"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-12-06",
+   "event_time": "10:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 1
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 67
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 104
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 110
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 105
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 115
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "G+K Della"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "A+N McGuigan"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-12-13",
+   "event_time": "10:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 46
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 106
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 86
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 57
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 96
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 97
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 82
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "J+A Edgecombe"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "A+N McGuigan"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-12-20",
+   "event_time": "10:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 119
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 49
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 77
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 3
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 69
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 103
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "B+R Franklin"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "D+H Gibbs"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-12-27",
+   "event_time": "10:00",
+   "title": "Sunday Memorial Meeting",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Exhorter",
+     "kind": "user",
+     "value": 50
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Reader/Emblem 1",
+     "kind": "user",
+     "value": 32
+    },
+    {
+     "role": "Reader/Emblem 2",
+     "kind": "user",
+     "value": 65
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "Hosting",
+     "kind": "text",
+     "value": "M+K Dodson"
+    },
+    {
+     "role": "Hall Duties / Emblem Wash",
+     "kind": "text",
+     "value": "T+N Jenkins"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-07-26",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Bring a Friend Night \u2013 Is God Still Relevant Today?",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 26
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-09",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Understanding the Bible\u2019s Big Picture",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 28
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-16",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Can I Have Confidence the Bible Is True?",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 6
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-23",
+   "event_time": "18:00",
+   "title": "Sunday Evening: What Is Faith & How Can I Have Faith in God Today?",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-30",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Advice From Jesus on How to Live Today",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 74
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-06",
+   "event_time": "18:00",
+   "title": "Sunday Evening: What the Apostles Taught \u2013 Part A",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 24
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-13",
+   "event_time": "18:00",
+   "title": "Sunday Evening: What the Apostles Taught & How it Impacts my Life \u2013 Part B",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 24
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-20",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Good News for Today and Tomorrow",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 110
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-18",
+   "event_time": "18:00",
+   "title": "Sunday Evening: 2.30pm \u2013 Business Meeting  \u00b7  Sunday Night Youth Supper @ J+E Dodson\u2019s",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "empty",
+     "value": null
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-25",
+   "event_time": "18:00",
+   "title": "Sunday Evening: 2pm \u2013 Ecclesial Study Weekend @ Hall",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "empty",
+     "value": null
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-01",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Guest Speaker: Surviving the Digital World",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "text",
+     "value": "Prof. Wayne Warburton"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-08",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Should brothers wear head coverings in Ecclesial worship? Part 1",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "text",
+     "value": "David Mansfield"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-15",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Should brothers wear head coverings in Ecclesial worship? Part 2",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "text",
+     "value": "David Mansfield"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-29",
+   "event_time": "18:00",
+   "title": "Sunday Evening: Song & Praise",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "empty",
+     "value": null
+    }
+   ]
+  },
+  {
+   "event_date": "2026-07-01",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Musical Moments",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 16
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 115
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Kas D & Peta G"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-07-22",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Galatians 2",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 26
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 46
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 19
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Abi E & Sandy S"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-07-29",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Musical Moments",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 16
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 105
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 72
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Mia B & Nic M"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-05",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Galatians 3",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 6
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 30
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Rose F & Kyley H"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-12",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Musical Moments",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 16
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 72
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 63
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 46
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Karis D & Nic M"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-19",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Galatians 4",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 28
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 39
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 19
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 106
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Rose S & Brendan W"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-08-26",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Galatians 5",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 49
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 97
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 35
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Abi D & Sarah H"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-02",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Galatians 6",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 110
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 103
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 96
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 72
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 20
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Emma D & Leah T"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-09",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Love",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 58
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 67
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 2
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 69
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 104
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Rochelle M & Beth T"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-16",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Joy",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 1
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 32
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 63
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 119
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Loriene D & Belinda S"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-09-23",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Peace",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 115
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 60
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 96
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 6
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Mia B & Rebekah M"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-14",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Patience",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 103
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 104
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 74
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Belinda S & Leah T"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-21",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Kindness",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 39
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 16
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 19
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 28
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Kas D & Abi E"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-10-28",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Goodness",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 106
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 97
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 49
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Sarah H & Rose S"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-04",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Faithfulness",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 110
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 11
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 2
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 69
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 67
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Buck D & Brendan W"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-11",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Gentleness",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 18
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 105
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 22
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Loriene D & Karis D"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-18",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Year in Review",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "text",
+     "value": "Andrew Dangerfield"
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 43
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 85
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 72
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 52
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Peta G & Kyley H"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-11-25",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Fruit of the Spirit | Self-Control",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 20
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 119
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 2
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 63
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 39
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Sandy D & Beth T"
+    }
+   ]
+  },
+  {
+   "event_date": "2026-12-02",
+   "event_time": "20:00",
+   "title": "Wednesday Bible Class: Any Difficult Question Answered",
+   "notes": null,
+   "assignments": [
+    {
+     "role": "Speaker",
+     "kind": "user",
+     "value": 30
+    },
+    {
+     "role": "Chairman",
+     "kind": "user",
+     "value": 91
+    },
+    {
+     "role": "AV/Music",
+     "kind": "user",
+     "value": 93
+    },
+    {
+     "role": "Pianist",
+     "kind": "user",
+     "value": 55
+    },
+    {
+     "role": "Doorman",
+     "kind": "user",
+     "value": 108
+    },
+    {
+     "role": "Supper",
+     "kind": "text",
+     "value": "Rebekah M & Sandy S"
+    }
+   ]
+  }
+ ],
+ "memorial_roles": [
+  "Exhorter",
+  "Chairman",
+  "Reader/Emblem 1",
+  "Reader/Emblem 2",
+  "AV/Music",
+  "Pianist",
+  "Doorman",
+  "Hosting",
+  "Hall Duties / Emblem Wash"
+ ],
+ "evening_roles": [
+  "Speaker"
+ ],
+ "wed_roles": [
+  "Speaker",
+  "Chairman",
+  "AV/Music",
+  "Pianist",
+  "Doorman",
+  "Supper"
+ ]
+}
