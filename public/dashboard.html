@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Riverwood Ecclesia Portal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="nav-root"></div>
+  <div class="hero">
+    <div class="crest-lg"></div>
+    <blockquote>&ldquo;For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</blockquote>
+    <p class="tagline">Ordinary people, extraordinary God</p>
+  </div>
+
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="card" id="postFormCard" style="display:none;">
+          <h3>Post an announcement</h3>
+          <form class="stacked" id="postForm">
+            <label for="postTitle">Title</label>
+            <input id="postTitle" required>
+            <label for="postBody">Message</label>
+            <textarea id="postBody" required></textarea>
+            <button class="btn" type="submit">Publish</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="section-title"><h2>Ecclesia News</h2></div>
+          <div id="newsFeed"><p class="empty-note">Loading news&hellip;</p></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div class="section-title"><h2>My Schedule</h2></div>
+          <div id="mySchedule"><p class="empty-note">Loading your roster&hellip;</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">Riverwood Christadelphian Ecclesia &middot; 265 Bonds Road, Riverwood</footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    let currentUser = null;
+
+    async function loadNews() {
+      const res = await fetch('/api/news', { credentials: 'include' });
+      const data = await res.json();
+      const feed = document.getElementById('newsFeed');
+      if (!data.posts.length) {
+        feed.innerHTML = '<p class="empty-note">No announcements yet.</p>';
+        return;
+      }
+      feed.innerHTML = data.posts.map(p => `
+        <div class="post" data-id="${p.id}">
+          <div class="meta">${new Date(p.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })} &middot; ${p.author_name}</div>
+          <h4>${escapeHtml(p.title)}</h4>
+          <div>${escapeHtml(p.body).replace(/\n/g, '<br>')}</div>
+          ${currentUser.role === 'admin' ? `<div class="actions">
+            <a onclick="deletePost(${p.id})">Delete</a>
+          </div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    async function deletePost(id) {
+      if (!confirm('Delete this announcement?')) return;
+      await fetch('/api/news/' + id, { method: 'DELETE', credentials: 'include' });
+      loadNews();
+    }
+
+    async function loadMySchedule() {
+      const res = await fetch('/api/my-schedule', { credentials: 'include' });
+      const data = await res.json();
+      const box = document.getElementById('mySchedule');
+      if (!data.schedule.length) {
+        box.innerHTML = '<p class="empty-note">You have no upcoming duties rostered.</p>';
+        return;
+      }
+      box.innerHTML = data.schedule.map(s => `
+        <div class="schedule-item">
+          <div>
+            <div class="date">${fmtDate(s.event_date)}</div>
+            <div class="sub">${escapeHtml(s.event_title)}${s.event_time ? ' &middot; ' + fmtTime(s.event_time) : ''}</div>
+          </div>
+          <div class="role-badge">${escapeHtml(s.role)}</div>
+        </div>
+      `).join('');
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    document.getElementById('postForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = document.getElementById('postTitle').value.trim();
+      const body = document.getElementById('postBody').value.trim();
+      await fetch('/api/news', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ title, body })
+      });
+      document.getElementById('postForm').reset();
+      loadNews();
+    });
+
+    (async () => {
+      currentUser = await requireLogin();
+      if (!currentUser) return;
+      renderNav('dashboard', currentUser);
+      if (currentUser.role === 'admin') document.getElementById('postFormCard').style.display = 'block';
+      loadNews();
+      loadMySchedule();
+    })();
+  </script>
+</body>
+</html>

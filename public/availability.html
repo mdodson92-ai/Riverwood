@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Availability | Riverwood Ecclesia Portal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .pref-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.75rem; }
+  .pref-chip {
+    display: flex; align-items: center; gap: 0.5rem;
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 0.5rem 1rem; cursor: pointer; font-size: 0.85rem;
+  }
+  .pref-chip.checked { background: var(--ink); color: var(--white); border-color: var(--ink); }
+  .pref-chip input { display: none; }
+  .avail-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 0; border-bottom: 1px solid var(--border);
+  }
+  .avail-item:last-child { border-bottom: none; }
+  .avail-item .range { font-weight: 600; color: var(--ink); }
+  .avail-item .reason { font-size: 0.82rem; color: var(--grey); }
+  .date-row { display: flex; gap: 0.75rem; }
+  .date-row > div { flex: 1; }
+</style>
+</head>
+<body>
+  <div id="nav-root"></div>
+  <div class="container">
+    <div class="section-title"><h2>My Availability &amp; Duty Preferences</h2></div>
+    <p class="empty-note">Tell us when you can't help out, and which duties you're happy to be rostered for. Admins use this when auto-filling the roster - it won't put you down for anything you haven't opted into, or on a date you've marked unavailable.</p>
+
+    <div class="card">
+      <h3>Duties I'm willing to do</h3>
+      <div class="pref-grid" id="prefGrid"></div>
+      <button class="btn" id="savePrefsBtn" style="margin-top:1.25rem;">Save preferences</button>
+      <span class="empty-note" id="prefSaved" style="display:none; margin-left:0.75rem;">Saved.</span>
+    </div>
+
+    <div class="card">
+      <h3>Add a date range I'm unavailable</h3>
+      <form class="stacked" id="addAvailForm">
+        <div class="date-row">
+          <div>
+            <label for="availStart">From</label>
+            <input type="date" id="availStart" required>
+          </div>
+          <div>
+            <label for="availEnd">To</label>
+            <input type="date" id="availEnd" required>
+          </div>
+        </div>
+        <label for="availReason">Reason (optional)</label>
+        <input id="availReason" placeholder="e.g. Family holiday">
+        <button class="btn" type="submit">Add</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>My unavailable dates</h3>
+      <div id="availList"><p class="empty-note">Loading&hellip;</p></div>
+    </div>
+  </div>
+  <footer class="site-footer">Riverwood Christadelphian Ecclesia &middot; 265 Bonds Road, Riverwood</footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    let currentUser = null;
+    let preferenceRoles = [];
+    let myRoles = new Set();
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    async function loadPreferenceRoles() {
+      const res = await fetch('/api/roles', { credentials: 'include' });
+      const data = await res.json();
+      preferenceRoles = data.preferenceRoles || [];
+    }
+
+    async function loadMyPreferences() {
+      const res = await fetch('/api/my-preferences', { credentials: 'include' });
+      const data = await res.json();
+      myRoles = new Set(data.roles || []);
+      renderPrefGrid();
+    }
+
+    function renderPrefGrid() {
+      const grid = document.getElementById('prefGrid');
+      grid.innerHTML = preferenceRoles.map(role => `
+        <label class="pref-chip ${myRoles.has(role) ? 'checked' : ''}" data-role="${escapeHtml(role)}">
+          <input type="checkbox" ${myRoles.has(role) ? 'checked' : ''}> ${escapeHtml(role)}
+        </label>
+      `).join('');
+      grid.querySelectorAll('.pref-chip').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          const role = chip.dataset.role;
+          if (myRoles.has(role)) myRoles.delete(role); else myRoles.add(role);
+          renderPrefGrid();
+        });
+      });
+    }
+
+    document.getElementById('savePrefsBtn').addEventListener('click', async () => {
+      await fetch('/api/my-preferences', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ roles: Array.from(myRoles) })
+      });
+      const saved = document.getElementById('prefSaved');
+      saved.style.display = 'inline';
+      setTimeout(() => saved.style.display = 'none', 2500);
+    });
+
+    async function loadAvailability() {
+      const res = await fetch('/api/my-availability', { credentials: 'include' });
+      const data = await res.json();
+      const box = document.getElementById('availList');
+      if (!data.availability.length) {
+        box.innerHTML = '<p class="empty-note">No unavailable dates recorded.</p>';
+        return;
+      }
+      box.innerHTML = data.availability.map(a => `
+        <div class="avail-item">
+          <div>
+            <div class="range">${fmtDate(a.start_date)} &ndash; ${fmtDate(a.end_date)}</div>
+            ${a.reason ? `<div class="reason">${escapeHtml(a.reason)}</div>` : ''}
+          </div>
+          <a class="btn small danger" onclick="removeAvailability(${a.id})">Remove</a>
+        </div>
+      `).join('');
+    }
+
+    async function removeAvailability(id) {
+      if (!confirm('Remove this unavailable date range?')) return;
+      await fetch('/api/my-availability/' + id, { method: 'DELETE', credentials: 'include' });
+      loadAvailability();
+    }
+
+    document.getElementById('addAvailForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const start_date = document.getElementById('availStart').value;
+      const end_date = document.getElementById('availEnd').value;
+      const reason = document.getElementById('availReason').value.trim();
+      const res = await fetch('/api/my-availability', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ start_date, end_date, reason })
+      });
+      if (res.ok) {
+        document.getElementById('addAvailForm').reset();
+        loadAvailability();
+      } else {
+        const data = await res.json();
+        alert(data.error || 'Could not add that date range');
+      }
+    });
+
+    (async () => {
+      currentUser = await requireLogin();
+      if (!currentUser) return;
+      renderNav('availability', currentUser);
+      await loadPreferenceRoles();
+      await loadMyPreferences();
+      loadAvailability();
+    })();
+  </script>
+</body>
+</html>

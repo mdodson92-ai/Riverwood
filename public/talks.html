@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talks | Riverwood Ecclesia Portal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  audio, video { width: 100%; margin-top: 0.6rem; }
+  .talk-meta { color: var(--grey); font-size: 0.85rem; margin-bottom: 0.4rem; }
+  #uploadStatus { font-size: 0.85rem; color: var(--teal-dark); margin-top: 0.6rem; }
+</style>
+</head>
+<body>
+  <div id="nav-root"></div>
+  <div class="container">
+    <div class="section-title">
+      <h2>Talks</h2>
+    </div>
+
+    <div class="card" id="uploadCard" style="display:none;">
+      <h3>Upload a talk</h3>
+      <p class="empty-note">Audio or video recordings, up to 150MB each. On the free hosting tier these are stored the same way the database is - they'll be wiped on restart unless a persistent disk is attached (see the README).</p>
+      <form class="stacked" id="talkForm">
+        <label for="talkTitle">Title</label>
+        <input id="talkTitle" placeholder="e.g. Sunday Memorial Meeting - The Hope of Israel" required>
+        <label for="talkSpeaker">Speaker</label>
+        <input id="talkSpeaker" placeholder="e.g. Bro. John Smith">
+        <label for="talkDate">Date</label>
+        <input id="talkDate" type="date">
+        <label for="talkDesc">Description</label>
+        <textarea id="talkDesc" placeholder="Optional"></textarea>
+        <label for="talkFile">Audio or video file</label>
+        <input id="talkFile" type="file" accept="audio/*,video/mp4,video/quicktime" required>
+        <button class="btn" type="submit">Upload</button>
+      </form>
+      <div id="uploadStatus"></div>
+    </div>
+
+    <div id="talksList"><p class="empty-note">Loading talks&hellip;</p></div>
+  </div>
+  <footer class="site-footer">Riverwood Christadelphian Ecclesia &middot; 265 Bonds Road, Riverwood</footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    let currentUser = null;
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function renderTalk(t, isAdmin) {
+      const mime = t.mime_type || '';
+      const src = `/uploads/talks/${encodeURIComponent(t.filename)}`;
+      const player = mime.startsWith('video')
+        ? `<video controls><source src="${src}" type="${mime}"></video>`
+        : `<audio controls><source src="${src}" type="${mime}"></audio>`;
+      return `
+        <div class="card">
+          <h3>${escapeHtml(t.title)} ${isAdmin ? `<a class="btn small danger" style="float:right" onclick="deleteTalk(${t.id})">Remove</a>` : ''}</h3>
+          <div class="talk-meta">${t.speaker ? escapeHtml(t.speaker) + ' &middot; ' : ''}${t.talk_date ? fmtDate(t.talk_date) : ''}</div>
+          ${t.description ? `<p>${escapeHtml(t.description)}</p>` : ''}
+          ${player}
+          <div class="empty-note" style="margin-top:0.5rem;">Uploaded by ${escapeHtml(t.uploaded_by_name)} &middot; <a href="${src}" download>Download</a></div>
+        </div>
+      `;
+    }
+
+    async function loadTalks() {
+      const res = await fetch('/api/talks', { credentials: 'include' });
+      const data = await res.json();
+      const box = document.getElementById('talksList');
+      if (!data.talks.length) {
+        box.innerHTML = '<p class="empty-note">No talks uploaded yet.</p>';
+        return;
+      }
+      const isAdmin = currentUser.role === 'admin';
+      box.innerHTML = data.talks.map(t => renderTalk(t, isAdmin)).join('');
+    }
+
+    async function deleteTalk(id) {
+      if (!confirm('Remove this talk recording?')) return;
+      await fetch('/api/talks/' + id, { method: 'DELETE', credentials: 'include' });
+      loadTalks();
+    }
+
+    document.getElementById('talkForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fileInput = document.getElementById('talkFile');
+      const statusEl = document.getElementById('uploadStatus');
+      if (!fileInput.files.length) {
+        statusEl.textContent = 'Please choose an audio or video file.';
+        return;
+      }
+      const fd = new FormData();
+      fd.append('title', document.getElementById('talkTitle').value.trim());
+      fd.append('speaker', document.getElementById('talkSpeaker').value.trim());
+      fd.append('talk_date', document.getElementById('talkDate').value);
+      fd.append('description', document.getElementById('talkDesc').value.trim());
+      fd.append('file', fileInput.files[0]);
+      statusEl.textContent = 'Uploading… this can take a minute for longer recordings.';
+      try {
+        const res = await fetch('/api/talks', { method: 'POST', credentials: 'include', body: fd });
+        const data = await res.json();
+        if (!res.ok) {
+          statusEl.textContent = data.error || 'Upload failed';
+          return;
+        }
+        statusEl.textContent = '';
+        document.getElementById('talkForm').reset();
+        loadTalks();
+      } catch (err) {
+        statusEl.textContent = 'Could not reach the server. Please try again.';
+      }
+    });
+
+    (async () => {
+      currentUser = await requireLogin();
+      if (!currentUser) return;
+      renderNav('talks', currentUser);
+      if (currentUser.role === 'admin') document.getElementById('uploadCard').style.display = 'block';
+      loadTalks();
+    })();
+  </script>
+</body>
+</html>

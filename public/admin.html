@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | Riverwood Ecclesia Portal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="nav-root"></div>
+  <div class="container">
+    <div class="section-title"><h2>Manage Members</h2></div>
+
+    <div class="card">
+      <h3>Add a member</h3>
+      <form class="stacked" id="addUserForm">
+        <label for="uName">Full name</label>
+        <input id="uName" required>
+        <label for="uEmail">Email</label>
+        <input id="uEmail" type="email" required>
+        <label for="uPhone">Phone (optional)</label>
+        <input id="uPhone">
+        <label for="uPassword">Temporary password</label>
+        <input id="uPassword" type="text" required value="Welcome123!">
+        <label for="uRole">Role</label>
+        <select id="uRole">
+          <option value="member">Member</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button class="btn" type="submit">Add member</button>
+      </form>
+      <div class="error-msg" id="addUserError"></div>
+    </div>
+
+    <div class="card">
+      <h3>All members</h3>
+      <p class="empty-note">Real members loaded from the July&ndash;December 2026 speaking list all share the temporary password <strong>Riverwood2026!</strong> until they change it or you reset it below.</p>
+      <table class="roster-table" id="usersTable">
+        <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <footer class="site-footer">Riverwood Christadelphian Ecclesia &middot; 265 Bonds Road, Riverwood</footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    let currentUser = null;
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    async function loadUsers() {
+      const res = await fetch('/api/users', { credentials: 'include' });
+      const data = await res.json();
+      const tbody = document.querySelector('#usersTable tbody');
+      tbody.innerHTML = data.users.map(u => `
+        <tr>
+          <td>${escapeHtml(u.name)}</td>
+          <td>${escapeHtml(u.email)}</td>
+          <td>${escapeHtml(u.phone || '')}</td>
+          <td>
+            <select onchange="updateRole(${u.id}, '${u.name.replace(/'/g, "\\'")}', this.value)" ${u.id === currentUser.id ? 'disabled' : ''}>
+              <option value="member" ${u.role === 'member' ? 'selected' : ''}>Member</option>
+              <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>Admin</option>
+            </select>
+          </td>
+          <td>
+            <a class="btn small secondary" onclick="resetPassword(${u.id}, '${u.name.replace(/'/g, "\\'")}')">Reset password</a>
+            ${u.id === currentUser.id ? '' : `<a class="btn small danger" onclick="removeUser(${u.id})">Remove</a>`}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function resetPassword(id, name) {
+      const pw = prompt(`New temporary password for ${name}:`, 'Riverwood2026!');
+      if (!pw) return;
+      const res = await fetch('/api/users/' + id + '/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ password: pw })
+      });
+      if (res.ok) alert(`Password reset. Let ${name} know their new temporary password.`);
+      else alert('Could not reset password.');
+    }
+
+    async function updateRole(id, name, role) {
+      await fetch('/api/users/' + id, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ name, role })
+      });
+      loadUsers();
+    }
+
+    async function removeUser(id) {
+      if (!confirm('Remove this member?')) return;
+      await fetch('/api/users/' + id, { method: 'DELETE', credentials: 'include' });
+      loadUsers();
+    }
+
+    document.getElementById('addUserForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errBox = document.getElementById('addUserError');
+      errBox.style.display = 'none';
+      const body = {
+        name: document.getElementById('uName').value.trim(),
+        email: document.getElementById('uEmail').value.trim(),
+        phone: document.getElementById('uPhone').value.trim(),
+        password: document.getElementById('uPassword').value,
+        role: document.getElementById('uRole').value
+      };
+      const res = await fetch('/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        errBox.textContent = data.error;
+        errBox.style.display = 'block';
+        return;
+      }
+      document.getElementById('addUserForm').reset();
+      document.getElementById('uPassword').value = 'Welcome123!';
+      loadUsers();
+    });
+
+    (async () => {
+      currentUser = await requireLogin();
+      if (!currentUser) return;
+      if (currentUser.role !== 'admin') { window.location.href = '/dashboard.html'; return; }
+      renderNav('admin', currentUser);
+      loadUsers();
+    })();
+  </script>
+</body>
+</html>

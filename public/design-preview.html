@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Preview | Riverwood Ecclesia Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* Preview-only styling - none of this affects the real site */
+  .preview-banner {
+    background: var(--cream); border-bottom: 2px solid var(--teal); color: var(--teal-dark);
+    padding: 0.9rem 1.5rem; font-size: 0.9rem; text-align: center;
+  }
+  .swatches { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 1rem 1.5rem 1.5rem 1.5rem; }
+  .swatch { display: flex; align-items: center; gap: 0.5rem; background: #fff; border: 1px solid #e6ddc9; border-radius: 8px; padding: 0.4rem 0.7rem; font-size: 0.8rem; font-family: monospace; }
+  .swatch .dot { width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15); }
+  .preview-section { padding: 0 1.5rem; }
+  .preview-section h2.section-label { font-family: 'Inter', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b6862; margin: 2rem 0 0.75rem 0; }
+  .button-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+  .login-preview-wrap { padding: 2rem 1.5rem; background: linear-gradient(160deg, #232320 0%, #111110 100%); border-radius: 4px; margin: 0 1.5rem 2rem 1.5rem; }
+</style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    This is a static design preview - open it directly from your computer, no server needed.
+    It uses the real <code>css/style.css</code> file, so any color/style change you make there
+    will show up here exactly as it will on the live site. Edit the colors, refresh this page,
+    repeat until it looks right - then commit that one file to GitHub.
+  </div>
+
+  <div class="swatches" id="swatches"></div>
+
+  <!-- Real nav bar markup, same as every logged-in page -->
+  <div class="top-nav">
+    <div class="brand"><span class="crest"></span> riverwood ecclesia</div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">Roster</a>
+      <a href="#">Admin</a>
+    </nav>
+    <div class="user-chip">
+      <span>Micah Dodson<span class="admin-only-tag">Admin</span></span>
+      <button>Log out</button>
+    </div>
+  </div>
+
+  <!-- Real hero banner -->
+  <div class="hero">
+    <div class="crest-lg"></div>
+    <blockquote>&ldquo;For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</blockquote>
+    <p class="tagline">Ordinary people, extraordinary God</p>
+  </div>
+
+  <div class="preview-section">
+    <h2 class="section-label">Dashboard: news feed + my schedule</h2>
+  </div>
+
+  <div class="container" style="padding-top:0;">
+    <div class="grid-2">
+      <div>
+        <div class="card">
+          <h3>Post an announcement</h3>
+          <form class="stacked">
+            <label>Title</label>
+            <input value="Burrito Night 2026 - Save the Date">
+            <label>Message</label>
+            <textarea>Join us for our annual Burrito Night! A great night of food and fellowship for the whole family and friends - all welcome.</textarea>
+            <button class="btn" type="button">Publish</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="section-title"><h2>Ecclesia News</h2></div>
+          <div class="post">
+            <div class="meta">20 Jul 2026 &middot; Micah Dodson</div>
+            <h4>Welcome to the new Members Portal</h4>
+            <div>Hi everyone! This is our new home for ecclesia news and the July&ndash;December 2026 speaking list. You can always see what you're rostered on under "My Schedule".</div>
+            <div class="actions"><a>Delete</a></div>
+          </div>
+          <div class="post">
+            <div class="meta">18 Jul 2026 &middot; Micah Dodson</div>
+            <h4>First login? Read this</h4>
+            <div>Your account has been set up with a temporary password &ndash; please log in and change it.</div>
+            <div class="actions"><a>Delete</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div class="section-title"><h2>My Schedule</h2></div>
+          <div class="schedule-item">
+            <div>
+              <div class="date">Sun 26 Jul 2026</div>
+              <div class="sub">Sunday Memorial Meeting &middot; 11:00am</div>
+            </div>
+            <div class="role-badge">Chairman</div>
+          </div>
+          <div class="schedule-item">
+            <div>
+              <div class="date">Wed 26 Aug 2026</div>
+              <div class="sub">Wednesday Bible Class: Galatians 5 &middot; 8:00pm</div>
+            </div>
+            <div class="role-badge">Chairman</div>
+          </div>
+          <div class="schedule-item">
+            <div>
+              <div class="date">Sun 27 Sep 2026</div>
+              <div class="sub">Sunday Memorial Meeting &middot; 11:00am</div>
+            </div>
+            <div class="role-badge">Reader/Emblem 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-section">
+    <h2 class="section-label">Roster table</h2>
+  </div>
+
+  <div class="container" style="padding-top:0;">
+    <div class="card event-block">
+      <h3>Sunday Memorial Meeting</h3>
+      <div class="event-sub">Sun 26 Jul 2026 &middot; 11:00am</div>
+      <table class="roster-table">
+        <thead><tr><th style="width:220px">Role</th><th>Assigned to</th></tr></thead>
+        <tbody>
+          <tr><td class="role-name">Exhorter</td><td>James Dodson</td></tr>
+          <tr><td class="role-name">Chairman</td><td>Jarrod Edgecombe</td></tr>
+          <tr><td class="role-name">Reader/Emblem 1</td><td>John Unwin<span class="you-badge">YOU</span></td></tr>
+          <tr><td class="role-name">Hosting</td><td>J+R Stone</td></tr>
+          <tr><td class="role-name">Doorman</td><td><span class="empty-note">Unfilled</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="preview-section">
+    <h2 class="section-label">Login page</h2>
+  </div>
+
+  <div class="login-preview-wrap">
+    <div class="login-card" style="margin:0 auto;">
+      <div class="crest"></div>
+      <h1>Riverwood Ecclesia Portal</h1>
+      <p class="sub">Ordinary people, extraordinary God</p>
+      <form class="stacked">
+        <label>Email</label>
+        <input value="jeremydharden@gmail.com">
+        <label>Password</label>
+        <input type="password" value="Riverwood2026!">
+        <button class="btn" type="button" style="width:100%">Sign in</button>
+      </form>
+      <div class="error-msg" style="display:block;">Incorrect email or password</div>
+      <div class="hint-box">Use your own email from the Members Contact Details list, with the temporary password Riverwood2026!</div>
+    </div>
+  </div>
+
+  <div class="preview-section">
+    <h2 class="section-label">Buttons &amp; badges</h2>
+  </div>
+  <div class="container" style="padding-top:0;">
+    <div class="card">
+      <div class="button-row">
+        <button class="btn">Primary button</button>
+        <button class="btn secondary">Secondary button</button>
+        <button class="btn danger">Danger button</button>
+        <button class="btn small">Small</button>
+        <span class="role-badge">Role badge</span>
+        <span class="you-badge">YOU</span>
+        <span class="admin-only-tag">Admin</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">Riverwood Christadelphian Ecclesia &middot; 265 Bonds Road, Riverwood</footer>
+
+  <script>
+    // Read the actual CSS variables from style.css and show them as swatches,
+    // so you can see the current palette at a glance.
+    const vars = ['--ink','--teal','--teal-dark','--cream','--charcoal','--grey','--border','--white','--success','--danger'];
+    const root = getComputedStyle(document.documentElement);
+    const box = document.getElementById('swatches');
+    vars.forEach(v => {
+      const val = root.getPropertyValue(v).trim();
+      const el = document.createElement('div');
+      el.className = 'swatch';
+      el.innerHTML = `<span class="dot" style="background:${val}"></span>${v}: ${val}`;
+      box.appendChild(el);
+    });
+  </script>
+</body>
+</html>

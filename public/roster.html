@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roster | Riverwood Ecclesia Portal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .assign-row { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+  .assign-row select { flex: 1; min-width: 160px; }
+  .assign-row input[type=text] { flex: 1; min-width: 140px; }
+  .filter-bar { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+  .filter-bar select { padding: 0.4rem 0.6rem; border-radius: 7px; border: 1px solid var(--border); }
+
+  .view-toggle { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .toggle-btn {
+    background: var(--white); border: 1px solid var(--border); padding: 0.5rem 1.1rem;
+    border-radius: 999px; cursor: pointer; font-size: 0.78rem; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--ink); font-weight: 600;
+  }
+  .toggle-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+  .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+  .cal-legend { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+  .cal-legend .cal-chip { position: static; display: inline-block; cursor: default; }
+
+  .cal-weekdays {
+    display: grid; grid-template-columns: repeat(7, 1fr); text-align: center;
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--grey); margin-bottom: 0.3rem;
+  }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .cal-cell {
+    min-height: 86px; border: 1px solid var(--border); border-radius: 4px;
+    padding: 0.3rem; background: var(--white); overflow: hidden;
+  }
+  .cal-cell.other-month { background: var(--cream); }
+  .cal-cell.today { border-color: var(--teal); border-width: 2px; }
+  .cal-daynum { font-size: 0.78rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
+  .cal-cell.other-month .cal-daynum { color: var(--grey); }
+  .cal-chip {
+    display: block; font-size: 0.6rem; padding: 0.15rem 0.4rem; border-radius: 4px;
+    margin-bottom: 2px; color: var(--white); cursor: pointer; text-transform: uppercase;
+    letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .cal-chip-teal { background: var(--teal); }
+  .cal-chip-ink { background: var(--ink); }
+  .cal-chip-grey { background: var(--grey); }
+  .cal-chip-custom { background: var(--teal-dark); }
+  @media (max-width: 700px) {
+    .cal-cell { min-height: 58px; padding: 0.2rem; }
+    .cal-daynum { font-size: 0.68rem; }
+    .cal-chip { font-size: 0.52rem; padding: 0.1rem 0.25rem; }
+  }
+</style>
+</head>
+<body>
+  <div id="nav-root"></div>
+  <div class="container">
+    <div class="section-title">
+      <h2>Duty Roster</h2>
+    </div>
+    <div class="card" id="addEventCard" style="display:none;">
+      <h3>Add an event</h3>
+      <form class="stacked" id="addEventForm">
+        <label for="evType">Meeting type</label>
+        <select id="evType">
+          <option value="Sunday Memorial Meeting">Sunday Memorial Meeting</option>
+          <option value="Sunday Evening Lecture">Sunday Evening Lecture</option>
+          <option value="Wednesday Bible Class">Wednesday Bible Class</option>
+          <option value="custom">Custom&hellip;</option>
+        </select>
+        <div id="customRolesBox" style="display:none;">
+          <label>Roles to include</label>
+          <div id="customRolesList" style="display:flex;flex-wrap:wrap;gap:0.5rem;"></div>
+        </div>
+        <label for="evTitle">Event title</label>
+        <input id="evTitle" placeholder="e.g. Sunday Memorial Meeting" required>
+        <label for="evDate">Date</label>
+        <input id="evDate" type="date" required>
+        <label for="evTime">Time</label>
+        <input id="evTime" type="time">
+        <label for="evNotes">Notes</label>
+        <textarea id="evNotes" placeholder="Optional"></textarea>
+        <button class="btn" type="submit">Add event</button>
+      </form>
+    </div>
+
+    <div class="card" id="autoAssignCard" style="display:none;">
+      <h3>Auto-fill unfilled duties</h3>
+      <p class="empty-note">Fills empty individual roles (never Hosting/Hall Duties/Supper, and never overwrites an existing assignment) using each member's saved availability and duty preferences. Anyone without a preference set won't be picked for anything.</p>
+      <form class="stacked" id="autoAssignForm">
+        <div class="date-row" style="display:flex; gap:0.75rem;">
+          <div style="flex:1;">
+            <label for="autoFrom">From date</label>
+            <input type="date" id="autoFrom">
+          </div>
+          <div style="flex:1;">
+            <label for="autoTo">To date</label>
+            <input type="date" id="autoTo">
+          </div>
+        </div>
+        <button class="btn" type="submit">Run auto-fill</button>
+      </form>
+      <div id="autoAssignResults" style="margin-top:1rem;"></div>
+    </div>
+
+    <div class="view-toggle">
+      <button type="button" id="viewCalendarBtn" class="toggle-btn active" onclick="setViewMode('calendar')">Calendar view</button>
+      <button type="button" id="viewListBtn" class="toggle-btn" onclick="setViewMode('list')">List view</button>
+    </div>
+
+    <div id="calendarView">
+      <div class="cal-nav">
+        <button type="button" class="btn secondary small" onclick="changeMonth(-1)">&larr; Prev</button>
+        <h3 id="calMonthLabel" style="margin:0;"></h3>
+        <button type="button" class="btn secondary small" onclick="changeMonth(1)">Next &rarr;</button>
+      </div>
+      <div class="cal-legend">
+        <span class="cal-chip cal-chip-teal">Memorial Meeting</span>
+        <span class="cal-chip cal-chip-ink">Evening Lecture</span>
+        <span class="cal-chip cal-chip-grey">Bible Class</span>
+        <span class="cal-chip cal-chip-custom">Other</span>
+      </div>
+      <div class="cal-weekdays">
+        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div id="calDayDetail"></div>
+    </div>
+
+    <div id="listView" style="display:none;">
+      <div class="filter-bar">
+        <label for="viewFilter" style="font-weight:600;color:var(--teal-dark);">Show:</label>
+        <select id="viewFilter">
+          <option value="upcoming">Upcoming only</option>
+          <option value="all">All (including past)</option>
+        </select>
+      </div>
+      <div id="rosterList"><p class="empty-note">Loading roster&hellip;</p></div>
+    </div>
+  </div>
+  <footer class="site-footer">Riverwood Christadelphian Ecclesia &middot; 265 Bonds Road, Riverwood</footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    let currentUser = null;
+    let allMembers = [];
+    let rolePresets = {};
+    let allRoles = [];
+    let coupleRoles = [];
+    let viewMode = 'calendar';
+    let cachedEvents = [];
+    let calMonth = new Date();
+    calMonth.setDate(1);
+    let selectedDay = null;
+
+    const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const EVENT_COLORS = {
+      'Sunday Memorial Meeting': 'teal',
+      'Sunday Evening Lecture': 'ink',
+      'Wednesday Bible Class': 'grey'
+    };
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function toIsoDate(d) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    function colorClassFor(title) {
+      return EVENT_COLORS[title] || 'custom';
+    }
+
+    async function loadRoleInfo() {
+      const res = await fetch('/api/roles', { credentials: 'include' });
+      const data = await res.json();
+      allRoles = data.roles;
+      rolePresets = data.presets || {};
+      coupleRoles = data.coupleRoles || [];
+      const box = document.getElementById('customRolesList');
+      box.innerHTML = allRoles.map(r => `
+        <label style="font-weight:400;display:flex;gap:0.3rem;align-items:center;margin:0;">
+          <input type="checkbox" value="${escapeHtml(r)}" class="customRoleCk"> ${escapeHtml(r)}
+        </label>
+      `).join('');
+    }
+
+    async function loadMembersIfAdmin() {
+      if (currentUser.role !== 'admin') return;
+      const res = await fetch('/api/users', { credentials: 'include' });
+      const data = await res.json();
+      allMembers = data.users;
+    }
+
+    function renderAssignCell(ev, a, isAdmin) {
+      if (!isAdmin) {
+        if (a.user_name) {
+          return escapeHtml(a.user_name) + (a.user_id === currentUser.id ? '<span class="you-badge">YOU</span>' : '');
+        }
+        if (a.assigned_name) return escapeHtml(a.assigned_name);
+        return '<span class="empty-note">Unfilled</span>';
+      }
+      const isCustom = !a.user_id; // either unfilled or free text
+      const selectId = `sel_${ev.id}_${a.id}`;
+      const textId = `txt_${ev.id}_${a.id}`;
+      return `
+        <div class="assign-row">
+          <select id="${selectId}" onchange="onAssignSelect(${ev.id}, '${a.role.replace(/'/g, "\\'")}', this.value, '${textId}')">
+            <option value="" ${!a.user_id ? 'selected' : ''}>&mdash; Unfilled / custom text &mdash;</option>
+            ${allMembers.map(m => `<option value="${m.id}" ${a.user_id === m.id ? 'selected' : ''}>${escapeHtml(m.name)}</option>`).join('')}
+          </select>
+          <input type="text" id="${textId}" placeholder="or type a name / couple e.g. J+R Stone"
+                 value="${escapeHtml(a.assigned_name || '')}" style="${a.user_id ? 'display:none;' : ''}"
+                 onblur="onAssignText(${ev.id}, '${a.role.replace(/'/g, "\\'")}', this.value, '${selectId}')">
+        </div>
+      `;
+    }
+
+    async function onAssignSelect(eventId, role, userId, textId) {
+      const textInput = document.getElementById(textId);
+      if (userId) {
+        textInput.style.display = 'none';
+        textInput.value = '';
+        await assign(eventId, role, { user_id: Number(userId) });
+      } else {
+        textInput.style.display = '';
+        textInput.focus();
+      }
+    }
+
+    async function onAssignText(eventId, role, text, selectId) {
+      const select = document.getElementById(selectId);
+      select.value = '';
+      await assign(eventId, role, { assigned_name: text });
+    }
+
+    async function assign(eventId, role, payload) {
+      await fetch(`/api/events/${eventId}/assignments`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ role, ...payload })
+      });
+      await fetchAllEvents();
+      if (viewMode === 'calendar') renderDayDetail();
+    }
+
+    function renderEventBlock(ev, isAdmin) {
+      return `
+        <div class="card event-block">
+          <h3>${escapeHtml(ev.title)} ${isAdmin ? `<a class="btn small danger" style="float:right" onclick="deleteEvent(${ev.id})">Remove</a>` : ''}</h3>
+          <div class="event-sub">${fmtDate(ev.event_date)}${ev.event_time ? ' &middot; ' + fmtTime(ev.event_time) : ''}${ev.notes ? ' &middot; ' + escapeHtml(ev.notes) : ''}</div>
+          ${ev.assignments.length ? `
+          <table class="roster-table">
+            <thead><tr><th style="width:220px">Role</th><th>Assigned to</th></tr></thead>
+            <tbody>
+              ${ev.assignments.map(a => `
+                <tr>
+                  <td class="role-name">${escapeHtml(a.role)}</td>
+                  <td>${renderAssignCell(ev, a, isAdmin)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>` : ''}
+        </div>
+      `;
+    }
+
+    async function fetchAllEvents() {
+      const res = await fetch('/api/events?upcoming=false', { credentials: 'include' });
+      const data = await res.json();
+      cachedEvents = data.events;
+    }
+
+    async function deleteEvent(id) {
+      if (!confirm('Remove this event and its roster from the schedule?')) return;
+      await fetch('/api/events/' + id, { method: 'DELETE', credentials: 'include' });
+      selectedDay = null;
+      await fetchAllEvents();
+      renderCurrentView();
+    }
+
+    function setViewMode(mode) {
+      viewMode = mode;
+      document.getElementById('viewCalendarBtn').classList.toggle('active', mode === 'calendar');
+      document.getElementById('viewListBtn').classList.toggle('active', mode === 'list');
+      document.getElementById('calendarView').style.display = mode === 'calendar' ? 'block' : 'none';
+      document.getElementById('listView').style.display = mode === 'list' ? 'block' : 'none';
+      renderCurrentView();
+    }
+
+    function renderCurrentView() {
+      if (viewMode === 'calendar') renderCalendar();
+      else loadListView();
+    }
+
+    function renderCalendar() {
+      document.getElementById('calMonthLabel').textContent = `${MONTH_NAMES[calMonth.getMonth()]} ${calMonth.getFullYear()}`;
+      const year = calMonth.getFullYear();
+      const month = calMonth.getMonth();
+      const firstOfMonth = new Date(year, month, 1);
+      const startOffset = (firstOfMonth.getDay() + 6) % 7; // Monday-start week
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const daysInPrevMonth = new Date(year, month, 0).getDate();
+      const todayIso = toIsoDate(new Date());
+
+      const byDate = {};
+      cachedEvents.forEach(ev => { (byDate[ev.event_date] = byDate[ev.event_date] || []).push(ev); });
+
+      const totalCells = Math.ceil((startOffset + daysInMonth) / 7) * 7;
+      const cells = [];
+      for (let i = 0; i < totalCells; i++) {
+        let dayNum, cellMonth, otherMonth = false;
+        if (i < startOffset) {
+          dayNum = daysInPrevMonth - startOffset + i + 1;
+          cellMonth = month - 1;
+          otherMonth = true;
+        } else if (i >= startOffset + daysInMonth) {
+          dayNum = i - startOffset - daysInMonth + 1;
+          cellMonth = month + 1;
+          otherMonth = true;
+        } else {
+          dayNum = i - startOffset + 1;
+          cellMonth = month;
+        }
+        const cellDate = new Date(year, cellMonth, dayNum);
+        const iso = toIsoDate(cellDate);
+        const dayEvents = byDate[iso] || [];
+        const isToday = iso === todayIso;
+        cells.push(`
+          <div class="cal-cell ${otherMonth ? 'other-month' : ''} ${isToday ? 'today' : ''}" ${dayEvents.length ? `onclick="selectDay('${iso}')" style="cursor:pointer;"` : ''}>
+            <div class="cal-daynum">${dayNum}</div>
+            ${dayEvents.map(ev => `<div class="cal-chip cal-chip-${colorClassFor(ev.title)}">${escapeHtml(ev.title.replace('Sunday ', '').replace('Wednesday ', ''))}</div>`).join('')}
+          </div>
+        `);
+      }
+      document.getElementById('calGrid').innerHTML = cells.join('');
+      renderDayDetail();
+    }
+
+    function selectDay(iso) {
+      selectedDay = iso;
+      renderDayDetail();
+    }
+
+    function renderDayDetail() {
+      const box = document.getElementById('calDayDetail');
+      if (!selectedDay) { box.innerHTML = ''; return; }
+      const events = cachedEvents.filter(ev => ev.event_date === selectedDay);
+      if (!events.length) { box.innerHTML = ''; return; }
+      const isAdmin = currentUser.role === 'admin';
+      box.innerHTML = `<h3 style="margin-top:1.5rem;">${fmtDate(selectedDay)}</h3>` + events.map(ev => renderEventBlock(ev, isAdmin)).join('');
+    }
+
+    function changeMonth(delta) {
+      calMonth.setMonth(calMonth.getMonth() + delta);
+      selectedDay = null;
+      renderCalendar();
+    }
+
+    async function loadListView() {
+      const filter = document.getElementById('viewFilter').value;
+      const res = await fetch(`/api/events?upcoming=${filter === 'upcoming'}`, { credentials: 'include' });
+      const data = await res.json();
+      const box = document.getElementById('rosterList');
+      if (!data.events.length) {
+        box.innerHTML = '<p class="empty-note">No events on the roster yet.</p>';
+        return;
+      }
+      const isAdmin = currentUser.role === 'admin';
+      box.innerHTML = data.events.map(ev => renderEventBlock(ev, isAdmin)).join('');
+    }
+
+    document.getElementById('evType').addEventListener('change', (e) => {
+      const custom = e.target.value === 'custom';
+      document.getElementById('customRolesBox').style.display = custom ? 'block' : 'none';
+      if (!custom) document.getElementById('evTitle').value = e.target.value;
+    });
+
+    document.getElementById('viewFilter').addEventListener('change', loadListView);
+
+    document.getElementById('addEventForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const evType = document.getElementById('evType').value;
+      const title = document.getElementById('evTitle').value.trim();
+      const event_date = document.getElementById('evDate').value;
+      const event_time = document.getElementById('evTime').value;
+      const notes = document.getElementById('evNotes').value.trim();
+      let roles = null;
+      if (evType === 'custom') {
+        roles = Array.from(document.querySelectorAll('.customRoleCk:checked')).map(ck => ck.value);
+      } else {
+        roles = rolePresets[evType];
+      }
+      await fetch('/api/events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ event_date, event_time, title, notes, roles })
+      });
+      document.getElementById('addEventForm').reset();
+      document.getElementById('customRolesBox').style.display = 'none';
+      await fetchAllEvents();
+      renderCurrentView();
+    });
+
+    document.getElementById('autoAssignForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const from_date = document.getElementById('autoFrom').value || undefined;
+      const to_date = document.getElementById('autoTo').value || undefined;
+      const resultsBox = document.getElementById('autoAssignResults');
+      resultsBox.innerHTML = '<p class="empty-note">Running&hellip;</p>';
+      const res = await fetch('/api/admin/auto-assign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ from_date, to_date })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        resultsBox.innerHTML = `<p class="error-msg" style="display:block;">${escapeHtml(data.error || 'Auto-fill failed')}</p>`;
+        return;
+      }
+      const filledHtml = data.filled.length
+        ? `<p><strong>${data.filled.length} slot${data.filled.length === 1 ? '' : 's'} filled:</strong></p>` +
+          data.filled.map(f => `<div class="schedule-item"><div><div class="date">${fmtDate(f.date)}</div><div class="sub">${escapeHtml(f.event)}</div></div><div class="role-badge">${escapeHtml(f.role)} &rarr; ${escapeHtml(f.member)}</div></div>`).join('')
+        : '<p class="empty-note">No empty slots could be filled.</p>';
+      const skippedHtml = data.skipped.length
+        ? `<p style="margin-top:1.5rem;"><strong>${data.skipped.length} slot${data.skipped.length === 1 ? '' : 's'} still need a volunteer:</strong></p>` +
+          data.skipped.map(s => `<div class="schedule-item"><div><div class="date">${fmtDate(s.date)}</div><div class="sub">${escapeHtml(s.event)} &middot; ${escapeHtml(s.reason)}</div></div><div class="role-badge">${escapeHtml(s.role)}</div></div>`).join('')
+        : '';
+      resultsBox.innerHTML = filledHtml + skippedHtml;
+      await fetchAllEvents();
+      renderCurrentView();
+    });
+
+    (async () => {
+      currentUser = await requireLogin();
+      if (!currentUser) return;
+      renderNav('roster', currentUser);
+      if (currentUser.role === 'admin') {
+        document.getElementById('addEventCard').style.display = 'block';
+        document.getElementById('autoAssignCard').style.display = 'block';
+      }
+      await loadRoleInfo();
+      await loadMembersIfAdmin();
+      await fetchAllEvents();
+      renderCurrentView();
+    })();
+  </script>
+</body>
+</html>
